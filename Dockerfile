@@ -18,6 +18,8 @@ FROM base AS build
 # This way, dependencies will be cached across builds for performance
 RUN --mount=type=cache,target=/root/.pnpm-store pnpm i
 
+RUN pnpm store path
+
 # ---- Final stage ----
 FROM base AS final
 
