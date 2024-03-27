@@ -16,7 +16,7 @@ FROM base AS build
 
 # Use a build mount to cache the pnpm store
 # This way, dependencies will be cached across builds for performance
-RUN --mount=type=cache,target=/root/.pnpm-store pnpm i
+RUN --mount=type=cache,target=/root/.local/share/pnpm/store/v3 pnpm i
 
 RUN pnpm store path
 
